@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The Vault - Premium Game Collection</title>
+	<link rel="icon" type="image/svg+xml" href="images/vault.svg">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<!-- Animated Background -->
+	<div class="bg-blobs">
+		<div class="blob blob-1"></div>
+		<div class="blob blob-2"></div>
+		<div class="blob blob-3"></div>
+	</div>
+
+	<!-- Header Navigation -->
+	<header class="glass-header">
+		<div class="header-container">
+			<a href="vault.html" style="text-decoration: none; color: inherit;">
+				<div class="logo">
+					<img src="images/vault.svg" alt="Vault Icon"
+						style="width: 32px; height: 32px; filter: drop-shadow(0 0 8px rgba(255, 51, 102, 0.4));">
+					The<span class="logo-accent">Vault</span>
+				</div>
+			</a>
+
+			<div class="search-container">
+				<svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+					fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<circle cx="11" cy="11" r="8"></circle>
+					<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+				</svg>
+				<input type="text" id="searchInput" placeholder="Search thousands of games...">
+			</div>
+			
+			<div class="theme-picker" id="themePicker">
+				<div class="theme-dot pink active" data-theme="pink" title="Pink Theme"></div>
+				<div class="theme-dot blue" data-theme="blue" title="Blue Theme"></div>
+				<div class="theme-dot green" data-theme="green" title="Green Theme"></div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Main Content -->
+	<main>
+		<section class="hero">
+			<div class="hero-content">
+				<div class="badge">The Vault Is Live</div>
+				<h1>Discover your next <span class="text-gradient">obsession.</span></h1>
+				<p>Access thousands of games instantly from the cloud. No downloads, no waiting, just pure uninterrupted
+					gameplay with stunning performance - All for free.</p>
+			</div>
+		</section>
+
+		<!-- Game Loading State / Grid -->
+		<section class="games-section">
+			<section class="recent-section" id="recentSection" style="display: none;">
+				<h2>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="12" cy="12" r="10"></circle>
+						<polyline points="12 6 12 12 16 14"></polyline>
+					</svg>
+					Recently Played
+				</h2>
+				<div class="recent-grid" id="recentGrid"></div>
+			</section>
+
+			<div class="section-tabs" id="categoryTabs">
+				<button class="tab-btn active" data-tab="all">All Games <span id="gameCount" class="count-badge">Loading...</span></button>
+				<button class="tab-btn" data-tab="favorites">Favorites <span id="favCount" class="count-badge">0</span></button>
+			</div>
+
+			<div id="loadingIndicator" class="loading-state">
+				<div class="spinner"></div>
+				<p>Connecting to Cloud Servers...</p>
+			</div>
+
+			<div class="game-grid" id="gameGrid" style="display: none;">
+				<!-- Games will be injected here dynamically -->
+			</div>
+			
+			<div id="scrollSentinel" style="height: 20px; width: 100%;"></div>
+
+			<div id="noResults" class="no-results" style="display: none;">
+				<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+					stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+					<circle cx="12" cy="12" r="10"></circle>
+					<line x1="8" y1="12" x2="16" y2="12"></line>
+				</svg>
+				<h3>No games found</h3>
+				<p>Try adjusting your search terms.</p>
+			</div>
+		</section>
+	</main>
+
+	<!-- Footer -->
+	<footer>
+		<div class="footer-content">
+			<div class="logo">
+				<img src="images/vault.svg" alt="Vault Icon"
+					style="width: 28px; height: 28px; filter: drop-shadow(0 0 8px rgba(255, 51, 102, 0.4)); margin-right: 8px;">
+				The<span class="logo-accent">Vault</span>
+			</div>
+			<p>Your premium cloud gaming destination.</p>
+			<p class="copyright">&copy; 2026 TheVault. All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script src="app.js"></script>
+</body>
+
+</html>
